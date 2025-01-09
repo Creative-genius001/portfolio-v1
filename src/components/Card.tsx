@@ -8,7 +8,7 @@ const Card = () => {
       {data?.map(d=>{
           return(
             <div className="w-full flex sm:flex-col lg:flex-row justify-between items-center mb-12">
-                <div className='lg:w-[48%] sm:w-full h-[300px] overflow-hidden rounded-md sm:mb-4 lg:mb-0'>
+                <div className='lg:w-[48%] sm:w-full sm:h-[210px] lg:h-[300px] overflow-hidden rounded-md sm:mb-4 lg:mb-0'>
                   <img src={d.image} alt={d.name} className='w-full h-full' />
                 </div>
                 <div className='lg:w-[48%] sm:w-full flex flex-col justify-start'>
