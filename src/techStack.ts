@@ -3,7 +3,6 @@ interface techprops {
 }
 
 export const tech: Array<techprops> = [
-    { name: "Javascript(ES6)"},
     { name: "Angular"},
     { name: "NodeJs"},
     { name: "React"},
@@ -11,4 +10,7 @@ export const tech: Array<techprops> = [
     { name: "MongoDB"},
     { name: "TailwindCSS"},
     { name: "Typescript"},
+    { name: "Redux"},
+    { name: "Zustand"},
+    { name: "Vanilla Extract"},
 ]

@@ -2,99 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap");
 
+@layer components {
+	*::before::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
+	.icon {
+		position: relative;
+		top: 0;
+		transition: 0.5s all ease-in-out;
+	}
+	.icon:hover {
+		top: -5px;
+	}
 
-@layer components{
-      *::before::after{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+	body {
+		font-family: "Inter", sans-serif;
+		color: white;
+		background-color: black;
+	}
 
-      .icon{
-        position: relative;
-        top: 0;
-        transition: .5s all ease-in-out;
-      }
-      .icon:hover{
-        top: -5px;
-        
-      }
+	.code {
+		font-family: "Roboto Mono", monospace;
+	}
 
-      body{
-        font-family: 'Inter', sans-serif;
-        color: white;
-        background-color: black;
-      }
+	.nav-ul li {
+		cursor: pointer;
+	}
 
-      .code{
-        font-family: 'Roboto Mono', monospace;
-      }
+	.btn-main {
+		background: rgb(69, 21, 194);
+		background: linear-gradient(
+			90deg,
+			rgba(69, 21, 194, 1) 0%,
+			rgba(53, 133, 231, 1) 100%
+		);
+		position: relative;
+		/* border: 1px solid #91C9FF; */
+		outline: none;
+		transition: 1s ease-in-out;
+		border-radius: 9px;
+	}
+	.btn-main:hover {
+		transition: 1.7s ease-in-out;
+		background: rgba(53, 133, 231, 0.418);
+	}
 
-      .nav-ul li{
-        cursor: pointer;
-      }
+	.project-btn {
+		background-color: white;
+		padding: 10px 40px;
+		border-radius: 8px;
+		color: black;
+		margin-right: 20px;
+		font-size: 0.8rem;
+	}
+	.image-container::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 20px;
+		left: 20px;
+		background-color: transparent;
+		border: 1px solid white;
+		z-index: -10;
+		border-radius: 12px;
+	}
+	.footer-icons {
+		visibility: hidden;
+	}
 
-      .btn-main{
-        background: rgb(69,21,194);
-        background: linear-gradient(90deg, rgba(69,21,194,1) 0%, rgba(53,133,231,1) 100%);
-        position: relative;
-        /* border: 1px solid #91C9FF; */
-        outline: none;
-        transition: 1s ease-in-out;
-        border-radius: 9px;
-      }
-      .btn-main:hover{
-        transition: 1.7s ease-in-out;
-        background: rgba(53, 133, 231, 0.418);
-      }
+	#resume-button {
+		animation: float 1s alternate infinite
+			ease-in-out;
+	}
+	.card-content-wrapper {
+		position: relative;
+		z-index: 3;
+		color: white;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: 0.5s;
+	}
 
-      .image-container::before{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 20px;
-        left: 20px;
-        background-color: transparent;
-        border:1px solid white;
-        z-index: -10;
-        border-radius: 12px;
+	.hr-stroke {
+		border: none;
+		height: 1px;
+		background: linear-gradient(
+			to right,
+			#e8e8e884,
+			#f6f6f67b
+		);
+		margin: 20px 0;
+	}
 
-      }
-     .footer-icons{
-        visibility: hidden;
-     }
-
-     #resume-button{
-      animation: float 1s alternate infinite ease-in-out;
-     }
-     .card-content-wrapper{
-      position: relative;
-      z-index: 3;
-      color: white;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.5s;
-     }
-    
-    .card{
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      background: white;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      transition: 0.9s ease-out;
-    }
+	.card {
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+		background: white;
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		transition: 0.9s ease-out;
+	}
 	/* .card:hover{
 		transform: translateY(20px)
   } */
-  .card::before {
+	.card::before {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -103,47 +123,51 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 15px;
-		background: linear-gradient(0deg, rgba(8,8,8,1) 0%, rgba(255,255,255,0) 100%);
+		background: linear-gradient(
+			0deg,
+			rgba(8, 8, 8, 1) 0%,
+			rgba(255, 255, 255, 0) 100%
+		);
 		z-index: 2;
 		transition: 0.5s ease-out;
 		opacity: 0;
-    }
-	.card:hover::before{
-			opacity: 1
-  }
-	.card:hover .card-content-wrapper{
-			opacity: 1;
-			transform: translateY(-20px);
-  }
-	
-     .card-img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 15px;
-     }
+	}
+	.card:hover::before {
+		opacity: 1;
+	}
+	.card:hover .card-content-wrapper {
+		opacity: 1;
+		transform: translateY(-20px);
+	}
 
-     @keyframes float {
-        from{ 
-          top: -5px;
-          left: 5px;
-        }
-        to{
-          top: 5px;
-          left: -5px;
-        }
-     }
+	.card-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 15px;
+	}
 
-     @media screen and (max-width: 740px) and (min-width: 320px) {
-      .footer-icons{
-        visibility: visible;
-        width: 40% !important;
-     }
-     .social-link{
-      visibility: hidden;
-     }
-     }
+	@keyframes float {
+		from {
+			top: -5px;
+			left: 5px;
+		}
+		to {
+			top: 5px;
+			left: -5px;
+		}
+	}
+
+	@media screen and (max-width: 740px) and (min-width: 320px) {
+		.footer-icons {
+			visibility: visible;
+			width: 40% !important;
+		}
+		.social-link {
+			visibility: hidden;
+		}
+	}
 }
